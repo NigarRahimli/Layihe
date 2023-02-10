@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');f
 * {
     padding: 0;
     margin: 0;
@@ -6,7 +7,21 @@
     scroll-behavior: smooth;
   
 }
+#main{
+    .classic{
+        background-color: #eeeeee;
+        font-size: 34px;
+        font-weight: 700;
+        color: #333333;
+        text-align: center;
+        padding: 60px;
 
+    }
+        .container-my{
+            width: 82%;
+            margin: auto;
+        }
+    
 .bread-nav {
     .breadcrumb {
       font-size: 13px;
@@ -31,3 +46,41 @@
 
     }
   }
+  .blog-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .left-side{
+    
+
+
+    .popular{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    padding: 10px 0;
+  
+  a{
+    display: inline-block;
+    img{
+        width: 100%;
+        height: 100%;
+    }  }
+    .blog-left-details{
+        .blog-left-date{
+            font-size: 13px;
+            color: #717171;
+            padding: 5px 0;
+        }
+        .blog-left-content{
+            a{
+                font-size: 13px;
+                color: #2c2b2b;
+                text-decoration: none;
+                font-weight: 500;
+            }
+        }
+        
+    }}
+}}
