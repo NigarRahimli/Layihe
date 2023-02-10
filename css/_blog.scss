@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  
+}
+
+.bread-nav {
+    .breadcrumb {
+      font-size: 13px;
+
+      &-item {
+        a {
+          text-decoration: none;
+          color: #868686;
+          transition: 0.3s ease-in;
+
+          &:hover {
+            color: #333333;
+
+          }
+        }
+
+      }
+
+      .active {
+        color: #333333;
+      }
+
+    }
+  }

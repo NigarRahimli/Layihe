@@ -4,14 +4,51 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 0px;
+}
+
+.top {
+  --offset: 170px;
+  display: inline-block;
+  position: sticky;
+  bottom: 100px;
+  transition: 5s ease-in-out;
+  right: 20px;
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  text-decoration: none;
+  padding: 10px 11px;
+  font-family: sans-serif;
+  color: #fff;
+  background: #333333;
+  border-radius: 50%;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+}
+.top:hover {
+  background-color: #535353;
+}
+
+#tel-footer {
+  display: none;
 }
 
 #offcanva {
   display: none;
 }
 
+.btn-dark {
+  background-color: #393a3c;
+  border-color: #393a3c;
+}
+
 .container-my {
-  width: 90%;
+  width: 82%;
   margin: auto;
 }
 
@@ -424,6 +461,41 @@
 }
 
 @media (max-width: 576px) {
+  .top {
+    display: none;
+  }
+  #tel-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 96%;
+    margin-left: 2%;
+    background-color: white;
+    z-index: 100;
+  }
+  #tel-footer a {
+    padding-top: 15px;
+    color: #606060;
+  }
+  #tel-footer a i {
+    font-size: 22px;
+  }
+  #tel-footer a i:hover {
+    color: #2c567e;
+  }
+  #tel-footer a p {
+    text-transform: uppercase;
+    font-size: 10px;
+    padding-top: 5px;
+  }
+  #tel-footer a {
+    text-decoration: none;
+  }
+  .container-my {
+    width: 95%;
+  }
   #offcanva {
     display: block;
     position: fixed;
@@ -494,7 +566,7 @@
     padding: 20px 0px;
   }
   #offcanva .offcanvas-body .left-side .contact .form-control {
-    width: 230px;
+    width: 260px;
     display: inline-block;
     margin: 8px 0px;
     padding: 9px 15px 10px 10px;
@@ -616,12 +688,12 @@
   }
   .main .page-content {
     display: grid;
-    grid-template-columns: 1fr 50fr !important;
+    grid-template-columns: 1fr !important;
   }
   .main .page-content .left-side {
     opacity: 0;
     visibility: hidden;
-    width: 1px;
+    height: 1px;
   }
   .main .page-content .main-content {
     width: 100%;
@@ -637,9 +709,205 @@
     grid-template-columns: 50% 50% !important;
     gap: 10px;
   }
-  .main .page-content .main-content .all-product .products .product-image img {
+  .main .page-content .main-content .all-product .products .product .product-countdown-container {
+    border-radius: 3px;
+    padding: 7px;
+    font-weight: 700;
+    font-size: 11px;
+  }
+  .main .page-content .main-content .all-product .products .product .product-countdown-container .countdown-amount {
+    font-size: 8px;
+    font-weight: 400;
+  }
+  .main .page-content .main-content .all-product .products .product .product-image img {
     -o-object-fit: cover;
        object-fit: cover;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .top {
+    display: none;
+  }
+  #offcanva {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 206px;
+  }
+  #offcanva .btn {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0rem;
+    border-top-left-radius: 0rem;
+  }
+  #offcanva .offcanvas {
+    position: fixed;
+    bottom: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    visibility: hidden;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  #offcanva .offcanvas {
+    transition: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .offcanvas-header {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .btn-close {
+    padding: 0.5rem 0.5rem;
+    margin-top: -0.5rem;
+    margin-right: -7rem;
+    margin-bottom: -0.5rem;
+    background-color: #ffffff;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .offcanvas-body .left-side h5 {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
+  #offcanva .offcanvas-body .left-side .category {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #offcanva .offcanvas-body .left-side .category li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #333333;
+    display: inline-block;
+    padding: 10px 0px 10px 2px;
+  }
+  #offcanva .offcanvas-body .left-side .contact {
+    padding: 20px 0px;
+  }
+  #offcanva .offcanvas-body .left-side .contact .form-control {
+    width: 230px;
+    display: inline-block;
+    margin: 8px 0px;
+    padding: 9px 15px 10px 10px;
+    font-size: 1.3rem;
+    border-color: #e1e1e1;
+    border-radius: 0.3rem;
+    font-size: 13px;
+  }
+  #offcanva .offcanvas-body .left-side .contact .form-control::-moz-placeholder {
+    color: #bebdb7;
+  }
+  #offcanva .offcanvas-body .left-side .contact .form-control::placeholder {
+    color: #bebdb7;
+  }
+  #offcanva .offcanvas-body .left-side .contact a {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 13px 29px;
+    background-color: #333333;
+    border: #333333;
+    line-height: 1;
+  }
+  #offcanva .offcanvas-body .left-side .contact a:hover {
+    background-color: #494646;
+    border: #494646;
+  }
+  #offcanva .offcanvas-body .left-side .weekdays {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+  }
+  #offcanva .offcanvas-body .left-side .weekdays li {
+    padding: 10px 0px;
+    font-size: 14px;
+  }
+  #offcanva .offcanvas-body .left-side .product-left {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-top: 16px;
+    position: relative;
+  }
+  #offcanva .offcanvas-body .left-side .product-left .product-left-details {
+    padding-top: 16px;
+    padding-left: 14px;
+  }
+  #offcanva .offcanvas-body .left-side .product-left .product-left-details .product-left-stars {
+    color: #ff9933;
+    display: inline-block;
+    width: 82px;
+    font-size: 12px;
+  }
+  #offcanva .offcanvas-body .left-side .product-left .product-left-details .product-left-stars .grey {
+    color: #d6d6d6;
+  }
+  #offcanva .offcanvas-body .left-side .product-left .product-left-details .product-left-price {
+    font-weight: 600;
+    color: #020101;
+  }
+  #offcanva .offcanvas-body .left-side .product-left .product-left-details .product-left-name {
+    padding-bottom: 3px;
+    font-size: 13px;
+    color: #333333;
+    font-weight: 500;
+  }
+  #offcanva .offcanvas-body .left-side .product-left a {
+    width: 98px;
+    height: 110px;
+    background-color: #333333;
+  }
+  #offcanva .offcanvas-body .left-side .product-left a img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .offcanvas-start {
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .offcanvas-end {
+    width: 270px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  #offcanva .offcanvas.show {
+    transform: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .accordion {
+    width: 260px;
+  }
+  .accordion .accordion-button {
+    padding: 14px 25px 14px 0;
+  }
+  .accordion .accordion-body {
+    padding: 3px 0px;
+  }
+  .accordion h2 {
+    width: 290px;
+    border-bottom: 0.5px solid #efe9e9;
   }
 }
 @media (min-width: 576px) and (max-width: 768px) {
@@ -659,4 +927,26 @@
   .main .page-content .main-content {
     grid-row: 1;
   }
-}/*# sourceMappingURL=vendor.css.map */
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.bread-nav .breadcrumb {
+  font-size: 13px;
+}
+.bread-nav .breadcrumb-item a {
+  text-decoration: none;
+  color: #868686;
+  transition: 0.3s ease-in;
+}
+.bread-nav .breadcrumb-item a:hover {
+  color: #333333;
+}
+.bread-nav .breadcrumb .active {
+  color: #333333;
+}/*# sourceMappingURL=index.css.map */
