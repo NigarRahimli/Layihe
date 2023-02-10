@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    
   
 }
 #main{
@@ -48,11 +49,85 @@
   }
   .blog-content{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+  .center{
+    
+    .person-img{
+        img{
+         transition: 0.3s ease-in;   
+         border-radius: 5px;
+
+        }
+        overflow: hidden;
+        &:hover {
+            img{
+            transform: scale(1.1); }
+            
+          }
+    }
   }
   .left-side{
-    
+    .search{
+        form{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        border: 1px #333333 solid;
+        input{
+            border: none;
+            .no-outline:focus {
+                outline: none;
+                border-style: none;
+            }
+            
+        }
+        i{
+            display: inline-block;
+            padding-top: 5px;
+            
+        }
+    }}
+    .calendar{
+         h4 {
+            text-align: center;
+            font-size: larger;
+            margin-bottom: 0.5em;
+            background-color: #336699;
+            border-radius: 3px;
+            padding: 17px 0;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        .date {
+            width: 100%;
+            border-collapse: collapse;
+          
+          
+          
+          
+          thead th {
+            text-align: center;
+            color: #333;
+            font-size: 13px;
+            padding: 5px 0;
+           
+          }
+          
+          td {
+            width: 14.2857%;
+            text-align: center;
+            padding: 9px 0;
+            vertical-align: top;
+            font-size: 13px;
+            font-weight: 500;
+            color: #474747;
+            
+          }
+          
+    }
+}
 
 
     .popular{
@@ -82,5 +157,5 @@
             }
         }
         
-    }}
+    }}}
 }}
